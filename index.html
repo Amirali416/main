@@ -1,103 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ali Bazrgar - Web App</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    html, body {
-        height: 100%;
-        font-family: 'Roboto', sans-serif;
-        overflow: hidden;
-        background-color: #0a0a0a;
-    }
-
-    #tsparticles { position: absolute; width: 100%; height: 100%; z-index: -1; }
-
-    .content {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        text-align: center;
-    }
-
-    .content a {
-        padding: 20px 40px;
-        font-size: 1.5rem;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 50px;
-        background: linear-gradient(90deg, #00ffff, #ff00ff);
-        box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .content a:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff;
-    }
-
-    @media (max-width: 480px) {
-        .content a {
-            padding: 15px 30px;
-            font-size: 1.2rem;
-        }
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Bazrgar | Computer Engineer</title>
+    <meta name="description" content="Personal portfolio of Ali Bazrgar, a Computer Engineer passionate about Cybersecurity and AI.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Particles.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.css">
+    
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="tsparticles"></div>
+    <!-- Hero Section with Animated Background -->
+    <header id="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1 class="glitch" data-text="Ali Bazrgar">Ali Bazrgar</h1>
+            <p class="tagline">Computer Engineer | Cybersecurity & AI Enthusiast</p>
+            <a href="#about" class="cta-button">Explore My Work <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </header>
 
-<div class="content">
-    <a href="https://app.alibazrgar.ir" target="_blank">Click here to enter the web application</a>
-</div>
+    <main>
+        <!-- About Me Section -->
+        <section id="about" class="fade-in">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>
+                    Hello! I'm Ali, a passionate <strong>Computer Engineer</strong> with a deep love for the intricate worlds of <strong>Cybersecurity</strong> 🛡️ and <strong>Artificial Intelligence</strong> 🤖. I enjoy building secure systems and exploring the limitless possibilities of AI to solve real-world problems. My goal is to merge these two fields to create intelligent and secure applications for a better future. 🚀
+                </p>
+            </div>
+        </section>
 
-<!-- tsParticles Library -->
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.1/tsparticles.bundle.min.js"></script>
-<script>
-tsParticles.load("tsparticles", {
-    fullScreen: { enable: true },
-    background: { color: "#0a0a0a" },
-    fpsLimit: 60,
-    interactivity: {
-        detectsOn: "canvas",
-        events: {
-            onHover: { enable: true, mode: "repulse" },
-            onClick: { enable: true, mode: "push" },
-            resize: true
-        },
-        modes: {
-            repulse: { distance: 150, duration: 0.6 },
-            push: { quantity: 4 }
-        }
-    },
-    particles: {
-        number: { value: 120, density: { enable: true, area: 1000 } },
-        color: { value: ["#00ffff","#ff00ff","#ff0066"] },
-        shape: { type: "circle" },
-        opacity: { value: 0.7, random: true },
-        size: { value: 2.5, random: { enable:true, minimumValue:1 } },
-        links: { enable: true, distance: 150, color: "#00ffff", opacity: 0.3, width: 1 },
-        move: {
-            enable: true,
-            speed: 1.5,
-            direction: "none",
-            random: true,
-            straight: false,
-            outModes: { default: "bounce" },
-            attract: { enable: true, rotateX: 600, rotateY: 1200 }
-        }
-    },
-    detectRetina: true
-});
-</script>
+        <!-- My Project Section -->
+        <section id="projects" class="fade-in">
+            <div class="container">
+                <h2>My Web App</h2>
+                <div class="project-card">
+                    <!-- CHANGED: Title and description -->
+                    <h3>My Language Learning App</h3>
+                    <p>I've developed a comprehensive web application designed to make language learning engaging and effective. It combines modern pedagogy with interactive tools to help users master new languages. 🧠📚</p>
+                    <a href="https://app.alibazrgar.ir" target="_blank" class="project-link">
+                        <i class="fas fa-rocket"></i> Launch App
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="fade-in">
+            <div class="container">
+                <h2>Let's Connect</h2>
+                <p>Feel free to reach out to me through any of the platforms below. I'm always open to discussing new opportunities, interesting ideas, or just a friendly chat! 🤝</p>
+                <div class="contact-links">
+                    <!-- CHANGED: Email is now plain text -->
+                    <div class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>ali.bazrgar.ir@gmail.com</span>
+                    </div>
+                    <a href="https://t.me/alibazrgar" class="contact-link" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="https://instagram.com/ali.bazrgar_" class="contact-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ali Bazrgar. All Rights Reserved. Made with ❤️ and lots of ☕.</p>
+    </footer>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- My JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 </html>
