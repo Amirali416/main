@@ -1,0 +1,300 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --bg-color: #0a0a0a;
+    --primary-color: #8a2be2; /* A vibrant purple */
+    --secondary-color: #00ffff; /* A bright cyan */
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --card-bg-color: #1a1a1a;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 5px;
+}
+
+p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* --- Hero Section --- */
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    color: var(--heading-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Glitch Effect for the main title */
+.glitch {
+    position: relative;
+    text-shadow: 0.05em 0 0 var(--secondary-color), -0.03em -0.04em 0 var(--primary-color),
+                0.025em 0.04em 0 #ff00ff;
+    animation: glitch 725ms infinite;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    animation: glitch-1 500ms infinite;
+    color: var(--secondary-color);
+    z-index: -1;
+}
+
+.glitch::after {
+    animation: glitch-2 500ms infinite;
+    color: var(--primary-color);
+    z-index: -2;
+}
+
+@keyframes glitch {
+    0%, 100% { text-shadow: 0.05em 0 0 var(--secondary-color), -0.03em -0.04em 0 var(--primary-color), 0.025em 0.04em 0 #ff00ff; }
+    15% { text-shadow: 0.05em 0 0 var(--secondary-color), -0.03em -0.04em 0 var(--primary-color), 0.025em 0.04em 0 #ff00ff; }
+    16% { text-shadow: -0.05em -0.025em 0 var(--secondary-color), 0.025em 0.035em 0 var(--primary-color), -0.05em -0.05em 0 #ff00ff; }
+    49% { text-shadow: -0.05em -0.025em 0 var(--secondary-color), 0.025em 0.035em 0 var(--primary-color), -0.05em -0.05em 0 #ff00ff; }
+    50% { text-shadow: 0.05em 0.035em 0 var(--secondary-color), 0.03em 0 0 var(--primary-color), 0 -0.04em 0 #ff00ff; }
+    99% { text-shadow: 0.05em 0.035em 0 var(--secondary-color), 0.03em 0 0 var(--primary-color), 0 -0.04em 0 #ff00ff; }
+}
+
+@keyframes glitch-1 {
+    0%, 100% { clip: rect(42px, 9999px, 44px, 0); transform: skew(0.5deg); }
+    5% { clip: rect(12px, 9999px, 85px, 0); transform: skew(0.5deg); }
+    10% { clip: rect(48px, 9999px, 18px, 0); transform: skew(0.5deg); }
+    15% { clip: rect(68px, 9999px, 7px, 0); transform: skew(0.5deg); }
+    /* ... and so on for a more complex effect */
+}
+
+@keyframes glitch-2 {
+    0%, 100% { clip: rect(65px, 9999px, 119px, 0); transform: skew(0.5deg); }
+    5% { clip: rect(95px, 9999px, 149px, 0); transform: skew(0.5deg); }
+    10% { clip: rect(5px, 9999px, 59px, 0); transform: skew(0.5deg); }
+    15% { clip: rect(75px, 9999px, 79px, 0); transform: skew(0.5deg); }
+    /* ... and so on */
+}
+
+
+.tagline {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.4);
+}
+
+/* --- Project Section --- */
+.project-card {
+    background-color: var(--card-bg-color);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    margin-top: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    background: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.project-link:hover {
+    background: #00cccc;
+}
+
+/* --- Contact Section --- */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.contact-link i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.contact-link:hover {
+    transform: translateY(-5px);
+    background-color: #252525;
+    border-color: var(--primary-color);
+}
+
+.contact-link span {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+}
+
+/* --- Fade In Animation on Scroll --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-links {
+        gap: 15px;
+    }
+    
+    .contact-link {
+        padding: 15px;
+        width: 140px;
+    }
+}
